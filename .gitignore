@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+
+# Python bytecode and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Editor and local assistant state
+.vscode/
+.idea/
+.claude/settings.local.json
+second_brain/.obsidian/workspace.json
+second_brain/.obsidian/workspace-mobile.json
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+scitepress_paper/build/
+scitepress_paper/build_short/
+scitepress_paper/short_paper_draft.pdf
+
+# Temporary renders and extracted working files
+tmp/
+
+# Separate local projects nested inside this working directory
+/convex_hull/
+/top-down-shooting-unity/
