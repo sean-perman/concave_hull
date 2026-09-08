@@ -1,0 +1,7 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len
+unit_disk,original (naive intersection),100,4,4,0,2.5127,1.75,36.75,21.0,4,34
+unit_disk,bucketed intersection,100,4,4,0,1.6838,1.75,36.75,21.0,4,34
+unit_disk,checkpoint (convex_hull),100,4,4,0,3.201,5.5,61.5,11.18,5,43
+world_capitals,original (naive intersection),194,1,1,0,14.9323,4.0,211.0,52.75,7,46
+world_capitals,bucketed intersection,194,1,1,0,7.2931,4.0,211.0,52.75,7,46
+world_capitals,checkpoint (convex_hull),194,1,1,0,31.5874,54.0,641.0,11.87,35,62

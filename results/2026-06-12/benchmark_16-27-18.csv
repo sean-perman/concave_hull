@@ -1,0 +1,109 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len,avg_points_outside
+unit_disk,restart · naive,100,5,5,0,8.029,2.8,61.6,22.0,5,34,0.0
+unit_disk,restart · naive,250,5,5,0,12.8019,2.6,127.4,49.0,5,62,0.0
+unit_disk,restart · naive,500,5,5,0,50.1366,3.0,309.0,103.0,6,83,0.0
+unit_disk,restart · naive,1000,5,5,0,38.7986,2.6,154.8,59.54,5,117,0.0
+unit_disk,restart · naive,2500,5,5,0,79.6242,3.2,272.6,85.19,6,191,0.0
+unit_disk,restart · naive,5000,5,5,0,179.3421,4.8,557.6,116.17,7,207,0.0
+unit_disk,restart · naive,10000,5,5,0,368.5599,5.4,638.6,118.26,8,277,0.0
+unit_disk,restart · naive,20000,5,5,0,623.6359,6.2,442.0,71.29,9,375,0.0
+unit_disk,restart · naive,50000,5,5,0,1368.5298,4.4,671.6,152.64,7,682,0.0
+unit_disk,restart · bucketed,100,5,5,0,3.0676,2.8,61.6,22.0,5,34,0.0
+unit_disk,restart · bucketed,250,5,5,0,6.4254,2.6,127.4,49.0,5,62,0.0
+unit_disk,restart · bucketed,500,5,5,0,13.8828,3.0,309.0,103.0,6,83,0.0
+unit_disk,restart · bucketed,1000,5,5,0,20.9247,2.6,154.8,59.54,5,117,0.0
+unit_disk,restart · bucketed,2500,5,5,0,37.3574,3.2,272.6,85.19,6,191,0.0
+unit_disk,restart · bucketed,5000,5,5,0,91.092,4.8,557.6,116.17,7,207,0.0
+unit_disk,restart · bucketed,10000,5,5,0,235.7633,5.4,638.6,118.26,8,277,0.0
+unit_disk,restart · bucketed,20000,5,5,0,493.1074,6.2,442.0,71.29,9,375,0.0
+unit_disk,restart · bucketed,50000,5,5,0,1063.434,4.4,671.6,152.64,7,682,0.0
+unit_disk,checkpoint extreme · naive,100,5,5,0,5.5248,3.6,50.6,14.06,5,48,0.6
+unit_disk,checkpoint extreme · naive,250,5,5,0,19.1491,4.0,92.2,23.05,5,86,3.2
+unit_disk,checkpoint extreme · naive,500,5,5,0,61.3528,5.0,242.8,48.56,6,112,0.2
+unit_disk,checkpoint extreme · naive,1000,5,5,0,58.5275,4.2,136.6,32.52,5,162,1.0
+unit_disk,checkpoint extreme · naive,2500,5,5,0,116.597,6.6,279.2,42.3,6,243,6.8
+unit_disk,checkpoint extreme · naive,5000,5,5,0,239.9356,8.2,414.4,50.54,7,324,3.8
+unit_disk,checkpoint extreme · naive,10000,5,5,0,469.7578,10.4,640.0,61.54,6,422,4.8
+unit_disk,checkpoint extreme · naive,20000,5,5,0,805.7606,12.2,752.6,61.69,8,541,3.0
+unit_disk,checkpoint extreme · naive,50000,5,5,0,1938.6042,12.8,1135.0,88.67,7,814,3.2
+unit_disk,checkpoint extreme · bucketed,100,5,5,0,3.2044,3.6,50.6,14.06,5,48,0.6
+unit_disk,checkpoint extreme · bucketed,250,5,5,0,7.0378,4.0,92.2,23.05,5,86,3.2
+unit_disk,checkpoint extreme · bucketed,500,5,5,0,32.3343,5.0,242.8,48.56,6,112,0.2
+unit_disk,checkpoint extreme · bucketed,1000,5,5,0,22.5461,4.2,136.6,32.52,5,162,1.0
+unit_disk,checkpoint extreme · bucketed,2500,5,5,0,40.1754,6.6,279.2,42.3,6,243,6.8
+unit_disk,checkpoint extreme · bucketed,5000,5,5,0,83.0036,8.2,414.4,50.54,7,324,3.8
+unit_disk,checkpoint extreme · bucketed,10000,5,5,0,174.8947,10.4,640.0,61.54,6,422,4.8
+unit_disk,checkpoint extreme · bucketed,20000,5,5,0,345.9468,12.2,752.6,61.69,8,541,3.0
+unit_disk,checkpoint extreme · bucketed,50000,5,5,0,1030.8035,12.8,1135.0,88.67,7,814,3.2
+unit_disk,checkpoint convex_hull · naive,100,5,5,0,6.0061,4.6,49.8,10.83,5,48,0.0
+unit_disk,checkpoint convex_hull · naive,250,5,4,1,29.2286,6.25,111.0,17.76,5,102,3.5
+unit_disk,checkpoint convex_hull · naive,500,5,5,0,61.0802,7.8,219.4,28.13,6,124,0.0
+unit_disk,checkpoint convex_hull · naive,1000,5,4,1,99.9631,8.5,225.75,26.56,7,200,0.5
+unit_disk,checkpoint convex_hull · naive,2500,5,5,0,175.275,12.2,357.4,29.3,6,300,1.6
+unit_disk,checkpoint convex_hull · naive,5000,5,5,0,442.6232,22.0,569.2,25.87,7,470,4.0
+unit_disk,checkpoint convex_hull · naive,10000,5,5,0,972.8828,28.6,875.8,30.62,7,747,10.2
+unit_disk,checkpoint convex_hull · naive,20000,5,5,0,1680.8558,44.0,1070.0,24.32,8,911,5.8
+unit_disk,checkpoint convex_hull · naive,50000,5,5,0,4034.7343,50.8,1193.8,23.5,8,1505,16.0
+unit_disk,checkpoint convex_hull · bucketed,100,5,5,0,3.1634,4.6,49.8,10.83,5,48,0.0
+unit_disk,checkpoint convex_hull · bucketed,250,5,4,1,8.0761,6.25,111.0,17.76,5,102,3.5
+unit_disk,checkpoint convex_hull · bucketed,500,5,5,0,21.9813,7.8,219.4,28.13,6,124,0.0
+unit_disk,checkpoint convex_hull · bucketed,1000,5,4,1,35.4486,8.5,225.75,26.56,7,200,0.5
+unit_disk,checkpoint convex_hull · bucketed,2500,5,5,0,53.7846,12.2,357.4,29.3,6,300,1.6
+unit_disk,checkpoint convex_hull · bucketed,5000,5,5,0,128.0852,22.0,569.2,25.87,7,470,4.0
+unit_disk,checkpoint convex_hull · bucketed,10000,5,5,0,261.8509,28.6,875.8,30.62,7,747,10.2
+unit_disk,checkpoint convex_hull · bucketed,20000,5,5,0,493.42,44.0,1070.0,24.32,8,911,5.8
+unit_disk,checkpoint convex_hull · bucketed,50000,5,5,0,1384.9949,50.8,1193.8,23.5,8,1505,16.0
+star_8tips,restart · naive,100,5,5,0,17.3304,6.6,268.0,40.61,9,27,0.0
+star_8tips,restart · naive,250,5,5,0,18.2609,5.4,213.8,39.59,8,69,0.0
+star_8tips,restart · naive,500,5,5,0,72.368,6.0,546.6,91.1,9,120,0.0
+star_8tips,restart · naive,1000,5,5,0,92.6141,6.0,432.2,72.03,9,230,0.0
+star_8tips,restart · naive,2500,5,5,0,379.6922,9.6,1319.0,137.4,12,298,0.0
+star_8tips,restart · naive,5000,5,5,0,1208.9623,12.6,2760.0,219.05,15,368,0.0
+star_8tips,restart · naive,10000,5,5,0,3368.2807,18.6,5719.6,307.51,21,430,0.0
+star_8tips,restart · naive,20000,5,5,0,1796.2424,13.6,2728.2,200.6,16,646,0.0
+star_8tips,restart · naive,50000,5,5,0,4056.7942,19.6,4369.2,222.92,22,724,0.0
+star_8tips,restart · bucketed,100,5,5,0,8.713,6.6,268.0,40.61,9,27,0.0
+star_8tips,restart · bucketed,250,5,5,0,9.0056,5.4,213.8,39.59,8,69,0.0
+star_8tips,restart · bucketed,500,5,5,0,24.0756,6.0,546.6,91.1,9,120,0.0
+star_8tips,restart · bucketed,1000,5,5,0,28.705,6.0,432.2,72.03,9,230,0.0
+star_8tips,restart · bucketed,2500,5,5,0,106.3088,9.6,1319.0,137.4,12,298,0.0
+star_8tips,restart · bucketed,5000,5,5,0,352.9544,12.6,2760.0,219.05,15,368,0.0
+star_8tips,restart · bucketed,10000,5,5,0,1229.1432,18.6,5719.6,307.51,21,430,0.0
+star_8tips,restart · bucketed,20000,5,5,0,830.2083,13.6,2728.2,200.6,16,646,0.0
+star_8tips,restart · bucketed,50000,5,5,0,2388.8393,19.6,4369.2,222.92,22,724,0.0
+star_8tips,checkpoint extreme · naive,100,5,5,0,27.8294,9.4,265.8,28.28,7,44,1.4
+star_8tips,checkpoint extreme · naive,250,5,5,0,29.5156,11.2,259.6,23.18,9,101,7.6
+star_8tips,checkpoint extreme · naive,500,5,5,0,121.3672,12.6,657.0,52.14,9,163,2.4
+star_8tips,checkpoint extreme · naive,1000,5,5,0,250.0712,14.4,848.4,58.92,9,294,1.2
+star_8tips,checkpoint extreme · naive,2500,5,5,0,1045.811,21.8,1755.2,80.51,11,413,3.0
+star_8tips,checkpoint extreme · naive,5000,5,5,0,1132.5717,25.8,2255.2,87.41,14,551,3.8
+star_8tips,checkpoint extreme · naive,10000,5,5,0,1702.2427,26.0,2176.6,83.72,12,739,4.4
+star_8tips,checkpoint extreme · naive,20000,5,5,0,3134.286,35.8,3447.4,96.3,15,823,3.0
+star_8tips,checkpoint extreme · naive,50000,5,5,0,6579.4351,46.2,4949.6,107.13,22,1033,4.2
+star_8tips,checkpoint extreme · bucketed,100,5,5,0,12.7188,9.4,265.8,28.28,7,44,1.4
+star_8tips,checkpoint extreme · bucketed,250,5,5,0,12.0797,11.2,259.6,23.18,9,101,7.6
+star_8tips,checkpoint extreme · bucketed,500,5,5,0,40.9643,12.6,657.0,52.14,9,163,2.4
+star_8tips,checkpoint extreme · bucketed,1000,5,5,0,76.1473,14.4,848.4,58.92,9,294,1.2
+star_8tips,checkpoint extreme · bucketed,2500,5,5,0,292.4103,21.8,1755.2,80.51,11,413,3.0
+star_8tips,checkpoint extreme · bucketed,5000,5,5,0,218.7035,25.8,2255.2,87.41,14,551,3.8
+star_8tips,checkpoint extreme · bucketed,10000,5,5,0,361.4523,26.0,2176.6,83.72,12,739,4.4
+star_8tips,checkpoint extreme · bucketed,20000,5,5,0,807.6046,35.8,3447.4,96.3,15,823,3.0
+star_8tips,checkpoint extreme · bucketed,50000,5,5,0,2364.9639,46.2,4949.6,107.13,22,1033,4.2
+star_8tips,checkpoint convex_hull · naive,100,5,5,0,21.9677,13.0,230.2,17.71,9,42,0.0
+star_8tips,checkpoint convex_hull · naive,250,5,5,0,47.3154,18.6,346.4,18.62,10,115,0.8
+star_8tips,checkpoint convex_hull · naive,500,5,5,0,152.2451,20.8,806.8,38.79,9,187,1.0
+star_8tips,checkpoint convex_hull · naive,1000,5,5,0,395.6334,25.0,1199.6,47.98,10,311,1.4
+star_8tips,checkpoint convex_hull · naive,2500,5,5,0,1151.4513,34.8,2139.0,61.47,11,488,4.2
+star_8tips,checkpoint convex_hull · naive,5000,5,5,0,1577.3654,38.2,2284.4,59.8,14,667,10.2
+star_8tips,checkpoint convex_hull · naive,10000,5,5,0,2345.8884,43.4,2667.6,61.47,13,828,3.4
+star_8tips,checkpoint convex_hull · naive,20000,5,5,0,4411.9166,52.2,3833.4,73.44,13,1027,7.6
+star_8tips,checkpoint convex_hull · naive,50000,5,5,0,8253.0566,73.4,5730.0,78.07,22,1192,8.4
+star_8tips,checkpoint convex_hull · bucketed,100,5,5,0,10.0167,13.0,230.2,17.71,9,42,0.0
+star_8tips,checkpoint convex_hull · bucketed,250,5,5,0,16.6952,18.6,346.4,18.62,10,115,0.8
+star_8tips,checkpoint convex_hull · bucketed,500,5,5,0,46.614,20.8,806.8,38.79,9,187,1.0
+star_8tips,checkpoint convex_hull · bucketed,1000,5,5,0,102.9747,25.0,1199.6,47.98,10,311,1.4
+star_8tips,checkpoint convex_hull · bucketed,2500,5,5,0,220.8013,34.8,2139.0,61.47,11,488,4.2
+star_8tips,checkpoint convex_hull · bucketed,5000,5,5,0,257.3433,38.2,2284.4,59.8,14,667,10.2
+star_8tips,checkpoint convex_hull · bucketed,10000,5,5,0,445.2633,43.4,2667.6,61.47,13,828,3.4
+star_8tips,checkpoint convex_hull · bucketed,20000,5,5,0,973.3261,52.2,3833.4,73.44,13,1027,7.6
+star_8tips,checkpoint convex_hull · bucketed,50000,5,5,0,2772.6616,73.4,5730.0,78.07,22,1192,8.4

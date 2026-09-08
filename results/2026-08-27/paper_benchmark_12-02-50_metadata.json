@@ -1,0 +1,35 @@
+{
+  "created": "2026-08-27T12:02:50.581992-06:00",
+  "platform": "macOS-14.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "source_sha256": "fc0ef9a9a4badbee0f93e10fd64489ea9f9bfef8a94a619469a3b8138dad84ce",
+  "timing_note": "PRELIMINARY ONLY: exact-intersection counting occurred inside the timed region and could bias speedups. Use the later uninstrumented-timing run for the paper.",
+  "dependencies": {
+    "python": "3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 15:57:01) [Clang 17.0.6 ]",
+    "numpy": "2.1.3",
+    "scipy": "1.15.2",
+    "shapely": "2.1.2"
+  },
+  "arguments": {
+    "smoke": false,
+    "sizes": [
+      1000,
+      5000,
+      10000,
+      50000
+    ],
+    "synthetic_trials": 10,
+    "real_trials": 10,
+    "timeout": 180.0,
+    "output_dir": null
+  },
+  "held_constant": {
+    "initial_k": 3,
+    "knn_backend": "scipy",
+    "k_growth_strategy": "linear",
+    "failure_strategy": "restart",
+    "validate_final_hull": "enforce",
+    "intersection_bucket_size": "auto: extent/sqrt(n)"
+  }
+}

@@ -1,0 +1,91 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len,avg_points_outside
+unit_disk,restart · bucketed,100,5,5,0,25.9524,2.8,61.6,22.0,5,34,0.0
+unit_disk,restart · bucketed,250,5,5,0,7.1545,2.6,127.4,49.0,5,62,0.0
+unit_disk,restart · bucketed,500,5,5,0,14.9096,3.0,309.0,103.0,6,83,0.0
+unit_disk,restart · bucketed,1000,5,5,0,22.1865,2.6,154.8,59.54,5,117,0.0
+unit_disk,restart · bucketed,2500,5,5,0,40.6244,3.2,272.6,85.19,6,191,0.0
+unit_disk,restart · bucketed,5000,5,5,0,97.2027,4.8,557.6,116.17,7,207,0.0
+unit_disk,restart · bucketed,10000,5,5,0,246.3917,5.4,638.6,118.26,8,277,0.0
+unit_disk,restart · bucketed,20000,5,5,0,513.7558,6.2,442.0,71.29,9,375,0.0
+unit_disk,restart · bucketed,50000,5,5,0,970.0259,4.4,671.6,152.64,7,682,0.0
+unit_disk,ckpt extreme · per_region,100,5,5,0,3.3474,3.6,50.6,14.06,5,48,0.6
+unit_disk,ckpt extreme · per_region,250,5,5,0,7.2922,4.0,92.2,23.05,5,86,3.2
+unit_disk,ckpt extreme · per_region,500,5,5,0,24.1887,5.0,242.8,48.56,6,112,0.2
+unit_disk,ckpt extreme · per_region,1000,5,5,0,22.7917,4.2,136.6,32.52,5,162,1.0
+unit_disk,ckpt extreme · per_region,2500,5,5,0,41.2768,6.6,279.2,42.3,6,243,6.8
+unit_disk,ckpt extreme · per_region,5000,5,5,0,84.7176,8.2,414.4,50.54,7,324,3.8
+unit_disk,ckpt extreme · per_region,10000,5,5,0,177.3551,10.4,640.0,61.54,6,422,4.8
+unit_disk,ckpt extreme · per_region,20000,5,5,0,364.2837,12.2,752.6,61.69,8,541,3.0
+unit_disk,ckpt extreme · per_region,50000,5,5,0,1128.0718,12.8,1135.0,88.67,7,814,3.2
+unit_disk,ckpt extreme · global,100,5,5,0,2.7521,2.6,34.0,13.08,5,39,0.6
+unit_disk,ckpt extreme · global,250,5,5,0,5.9459,2.6,63.6,24.46,5,71,0.4
+unit_disk,ckpt extreme · global,500,5,5,0,13.3036,3.0,115.4,38.47,6,104,0.2
+unit_disk,ckpt extreme · global,1000,5,5,0,13.1689,2.2,54.0,24.55,5,137,0.8
+unit_disk,ckpt extreme · global,2500,5,5,0,33.4397,3.0,108.2,36.07,6,225,3.4
+unit_disk,ckpt extreme · global,5000,5,5,0,110.4803,4.0,212.8,53.2,7,276,1.8
+unit_disk,ckpt extreme · global,10000,5,5,0,160.2456,4.8,227.0,47.29,7,357,1.4
+unit_disk,ckpt extreme · global,20000,5,5,0,290.169,5.4,209.4,38.78,8,426,0.8
+unit_disk,ckpt extreme · global,50000,5,5,0,889.4751,4.4,403.2,91.64,7,708,1.0
+unit_disk,ckpt convex_hull · per_region,100,5,5,0,3.7801,4.6,49.8,10.83,5,48,0.0
+unit_disk,ckpt convex_hull · per_region,250,5,4,1,9.8941,6.25,111.0,17.76,5,102,3.5
+unit_disk,ckpt convex_hull · per_region,500,5,5,0,24.7098,7.8,219.4,28.13,6,124,0.0
+unit_disk,ckpt convex_hull · per_region,1000,5,4,1,38.8294,8.5,225.75,26.56,7,200,0.5
+unit_disk,ckpt convex_hull · per_region,2500,5,5,0,50.8303,12.2,357.4,29.3,6,300,1.6
+unit_disk,ckpt convex_hull · per_region,5000,5,5,0,114.721,22.0,569.2,25.87,7,470,4.0
+unit_disk,ckpt convex_hull · per_region,10000,5,5,0,257.6323,28.6,875.8,30.62,7,747,10.2
+unit_disk,ckpt convex_hull · per_region,20000,5,5,0,519.0849,44.0,1070.0,24.32,8,911,5.8
+unit_disk,ckpt convex_hull · per_region,50000,5,5,0,1444.4109,50.8,1193.8,23.5,8,1505,16.0
+unit_disk,ckpt convex_hull · global,100,5,5,0,2.2521,2.4,20.4,8.5,5,38,0.0
+unit_disk,ckpt convex_hull · global,250,5,4,1,3.9238,2.5,26.75,10.7,5,64,0.0
+unit_disk,ckpt convex_hull · global,500,5,5,0,14.915,3.2,80.6,25.19,6,107,0.0
+unit_disk,ckpt convex_hull · global,1000,5,4,1,20.1594,2.5,38.75,15.5,5,132,0.0
+unit_disk,ckpt convex_hull · global,2500,5,5,0,34.2157,3.2,50.2,15.69,6,223,0.2
+unit_disk,ckpt convex_hull · global,5000,5,5,0,66.2011,3.8,48.0,12.63,6,286,0.6
+unit_disk,ckpt convex_hull · global,10000,5,5,0,122.6989,5.0,65.0,13.0,8,360,0.2
+unit_disk,ckpt convex_hull · global,20000,5,5,0,267.9268,6.0,215.2,35.87,9,433,1.8
+unit_disk,ckpt convex_hull · global,50000,5,5,0,793.0416,4.4,97.8,22.23,7,744,1.0
+star_8tips,restart · bucketed,100,5,5,0,40.6784,6.6,268.0,40.61,9,27,0.0
+star_8tips,restart · bucketed,250,5,5,0,10.2338,5.4,213.8,39.59,8,69,0.0
+star_8tips,restart · bucketed,500,5,5,0,27.0845,6.0,546.6,91.1,9,120,0.0
+star_8tips,restart · bucketed,1000,5,5,0,31.1177,6.0,432.2,72.03,9,230,0.0
+star_8tips,restart · bucketed,2500,5,5,0,114.8968,9.6,1319.0,137.4,12,298,0.0
+star_8tips,restart · bucketed,5000,5,5,0,372.7456,12.6,2760.0,219.05,15,368,0.0
+star_8tips,restart · bucketed,10000,5,5,0,1428.2116,18.6,5719.6,307.51,21,430,0.0
+star_8tips,restart · bucketed,20000,5,5,0,816.304,13.6,2728.2,200.6,16,646,0.0
+star_8tips,restart · bucketed,50000,5,5,0,2783.2347,19.6,4369.2,222.92,22,724,0.0
+star_8tips,ckpt extreme · per_region,100,5,5,0,14.5335,9.4,265.8,28.28,7,44,1.4
+star_8tips,ckpt extreme · per_region,250,5,5,0,15.3117,11.2,259.6,23.18,9,101,7.6
+star_8tips,ckpt extreme · per_region,500,5,5,0,46.3781,12.6,657.0,52.14,9,163,2.4
+star_8tips,ckpt extreme · per_region,1000,5,5,0,80.0442,14.4,848.4,58.92,9,294,1.2
+star_8tips,ckpt extreme · per_region,2500,5,5,0,315.8926,21.8,1755.2,80.51,11,413,3.0
+star_8tips,ckpt extreme · per_region,5000,5,5,0,238.9407,25.8,2255.2,87.41,14,551,3.8
+star_8tips,ckpt extreme · per_region,10000,5,5,0,388.8961,26.0,2176.6,83.72,12,739,4.4
+star_8tips,ckpt extreme · per_region,20000,5,5,0,868.8757,35.8,3447.4,96.3,15,823,3.0
+star_8tips,ckpt extreme · per_region,50000,5,5,0,2521.5417,46.2,4949.6,107.13,22,1033,4.2
+star_8tips,ckpt extreme · global,100,5,5,0,7.6086,4.2,128.8,30.67,7,43,1.4
+star_8tips,ckpt extreme · global,250,5,5,0,7.1249,5.4,128.2,23.74,8,76,0.0
+star_8tips,ckpt extreme · global,500,5,5,0,20.2343,5.4,313.0,57.96,8,134,18.0
+star_8tips,ckpt extreme · global,1000,5,5,0,27.4608,6.0,383.2,63.87,9,236,0.0
+star_8tips,ckpt extreme · global,2500,5,5,0,64.3362,8.2,610.6,74.46,11,365,0.6
+star_8tips,ckpt extreme · global,5000,5,5,0,132.208,9.8,981.8,100.18,12,462,1.4
+star_8tips,ckpt extreme · global,10000,5,5,0,243.7907,10.6,1073.4,101.26,13,628,1.0
+star_8tips,ckpt extreme · global,20000,5,5,0,524.0812,12.8,1275.4,99.64,15,751,1.6
+star_8tips,ckpt extreme · global,50000,5,5,0,1324.5323,19.6,1989.4,101.5,22,813,1.4
+star_8tips,ckpt convex_hull · per_region,100,5,5,0,10.8963,13.0,230.2,17.71,9,42,0.0
+star_8tips,ckpt convex_hull · per_region,250,5,5,0,18.005,18.6,346.4,18.62,10,115,0.8
+star_8tips,ckpt convex_hull · per_region,500,5,5,0,50.3891,20.8,806.8,38.79,9,187,1.0
+star_8tips,ckpt convex_hull · per_region,1000,5,5,0,110.3875,25.0,1199.6,47.98,10,311,1.4
+star_8tips,ckpt convex_hull · per_region,2500,5,5,0,232.2132,34.8,2139.0,61.47,11,488,4.2
+star_8tips,ckpt convex_hull · per_region,5000,5,5,0,275.5153,38.2,2284.4,59.8,14,667,10.2
+star_8tips,ckpt convex_hull · per_region,10000,5,5,0,497.6474,43.4,2667.6,61.47,13,828,3.4
+star_8tips,ckpt convex_hull · per_region,20000,5,5,0,1208.0394,52.2,3833.4,73.44,13,1027,7.6
+star_8tips,ckpt convex_hull · per_region,50000,5,5,0,2885.8687,73.4,5730.0,78.07,22,1192,8.4
+star_8tips,ckpt convex_hull · global,100,5,5,0,6.4658,5.8,104.6,18.03,8,33,0.0
+star_8tips,ckpt convex_hull · global,250,5,5,0,6.7184,5.4,73.2,13.56,8,90,0.4
+star_8tips,ckpt convex_hull · global,500,5,5,0,19.0487,6.0,235.6,39.27,9,133,0.4
+star_8tips,ckpt convex_hull · global,1000,5,5,0,39.3739,6.2,326.2,52.61,9,226,0.0
+star_8tips,ckpt convex_hull · global,2500,5,5,0,57.2217,8.2,446.6,54.46,11,370,0.4
+star_8tips,ckpt convex_hull · global,5000,5,5,0,128.5684,9.8,703.4,71.78,12,533,2.4
+star_8tips,ckpt convex_hull · global,10000,5,5,0,278.202,10.6,697.8,65.83,13,661,1.2
+star_8tips,ckpt convex_hull · global,20000,5,5,0,559.1541,12.8,972.4,75.97,15,783,2.2
+star_8tips,ckpt convex_hull · global,50000,5,5,0,1301.3287,19.6,1619.0,82.6,22,832,1.8

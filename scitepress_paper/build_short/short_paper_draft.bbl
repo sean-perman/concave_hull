@@ -1,0 +1,45 @@
+\begin{thebibliography}{}
+
+\bibitem[Duckham et~al., 2008]{duckham2008}
+Duckham, M., Kulik, L., Worboys, M., and Galton, A. (2008).
+\newblock Efficient generation of simple polygons for characterizing the shape
+  of a set of points in the plane.
+\newblock {\em Pattern Recognition}, 41(10):3224--3236.
+
+\bibitem[Edelsbrunner et~al., 1983]{edelsbrunner1983}
+Edelsbrunner, H., Kirkpatrick, D., and Seidel, R. (1983).
+\newblock On the shape of a set of points in the plane.
+\newblock {\em IEEE Transactions on Information Theory}, 29(4):551--559.
+
+\bibitem[Franklin et~al., 1989]{franklin1989}
+Franklin, W.~R., Narayanaswami, C., Kankanhalli, M., Sun, D., Zhou, M.-C., and
+  Wu, P. Y.~F. (1989).
+\newblock Uniform grids: A technique for intersection detection on serial and
+  parallel machines.
+\newblock In {\em Proceedings of Auto-Carto 9: Ninth International Symposium on
+  Computer-Assisted Cartography}, pages 100--109, Baltimore, Maryland.
+
+\bibitem[Galton and Duckham, 2006]{galton2006}
+Galton, A. and Duckham, M. (2006).
+\newblock What is the region occupied by a set of points?
+\newblock In {\em GIScience}, pages 81--98.
+
+\bibitem[Jarvis, 1973]{jarvis1973}
+Jarvis, R.~A. (1973).
+\newblock On the identification of the convex hull of a finite set of points in
+  the plane.
+\newblock {\em Information Processing Letters}, 2(1):18--21.
+
+\bibitem[Liao et~al., 2021]{liao2021}
+Liao, Z., Liu, J., Shi, G., and Meng, J. (2021).
+\newblock Grid partition variable step alpha shapes algorithm.
+\newblock {\em Mathematical Problems in Engineering}.
+
+\bibitem[Moreira and Santos, 2007]{moreira2007}
+Moreira, A. and Santos, M.~Y. (2007).
+\newblock Concave hull: A k-nearest neighbours approach for the computation of
+  the region occupied by a set of points.
+\newblock In {\em Proceedings of the International Conference on Computer
+  Graphics Theory and Applications (GRAPP)}, pages 61--68.
+
+\end{thebibliography}

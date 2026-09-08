@@ -1,0 +1,54 @@
+{
+  "created": "2026-09-01T18:53:01.677230-06:00",
+  "platform": "macOS-14.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "source_sha256": "65c7b45f6b0e7f4a0c6305aba171ce478003e3f5fd147580f0cf860b3b22b163",
+  "dependencies": {
+    "python": "3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 15:57:01) [Clang 17.0.6 ]",
+    "numpy": "2.1.3",
+    "scipy": "1.15.2",
+    "shapely": "2.1.2"
+  },
+  "arguments": {
+    "smoke": false,
+    "sizes": [
+      1000,
+      5000,
+      10000,
+      50000
+    ],
+    "synthetic_trials": 10,
+    "real_trials": 10,
+    "rate": 2.0,
+    "timeout": 300.0,
+    "datasets": null,
+    "include_world_capitals": false,
+    "output_dir": null,
+    "selected_datasets": [
+      "unit_disk",
+      "star_8tips",
+      "us_cities",
+      "gray_wolf",
+      "coast_redwood"
+    ]
+  },
+  "factorial_axes": {
+    "k_growth": [
+      "linear",
+      "geometric"
+    ],
+    "intersection": [
+      "naive",
+      "bucketed"
+    ]
+  },
+  "held_constant": {
+    "initial_k": 3,
+    "knn_backend": "scipy",
+    "failure_strategy": "restart",
+    "validate_final_hull": "enforce",
+    "intersection_bucket_size": "auto: extent/sqrt(n)"
+  },
+  "interpretation_guardrail": "Naive and bucketed outputs must match within a growth schedule. Linear and geometric growth may return different valid hulls."
+}

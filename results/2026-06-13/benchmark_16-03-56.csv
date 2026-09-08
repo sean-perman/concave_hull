@@ -1,0 +1,21 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len,avg_points_outside
+coast_redwood,restart · bucketed,1190,1,1,0,3261.9665,113.0,15007.0,132.81,116,60,0.0
+coast_redwood,ckpt extreme · per_region,1190,1,1,0,2052.5899,204.0,9516.0,46.65,140,100,2.0
+coast_redwood,ckpt extreme · global,1190,1,1,0,4908.9657,138.0,15230.0,110.36,141,66,2.0
+coast_redwood,ckpt convex_hull · per_region,1190,1,1,0,1605.0336,372.0,14278.0,38.38,116,123,12.0
+coast_redwood,ckpt convex_hull · global,1190,1,1,0,254.8631,113.0,3304.0,29.24,116,60,0.0
+gray_wolf,restart · bucketed,1054,1,1,0,151.5955,22.0,1890.0,85.91,25,92,0.0
+gray_wolf,ckpt extreme · per_region,1054,1,1,0,231.6582,99.0,3434.0,34.69,57,123,7.0
+gray_wolf,ckpt extreme · global,1054,1,1,0,114.5093,42.0,839.0,19.98,45,111,5.0
+gray_wolf,ckpt convex_hull · per_region,1054,1,1,0,234.6009,105.0,3360.0,32.0,57,138,9.0
+gray_wolf,ckpt convex_hull · global,1054,1,1,0,79.6837,42.0,806.0,19.19,45,111,5.0
+us_cities,restart · bucketed,219,1,1,0,4.6487,2.0,72.0,36.0,5,69,0.0
+us_cities,ckpt extreme · per_region,219,1,1,0,3.5891,2.0,18.0,9.0,5,86,0.0
+us_cities,ckpt extreme · global,219,1,1,0,3.3489,2.0,18.0,9.0,5,75,0.0
+us_cities,ckpt convex_hull · per_region,219,1,1,0,3.5631,2.0,16.0,8.0,5,86,0.0
+us_cities,ckpt convex_hull · global,219,1,1,0,3.4496,2.0,16.0,8.0,5,75,0.0
+world_capitals,restart · bucketed,194,1,1,0,63.7219,32.0,1134.0,35.44,35,28,0.0
+world_capitals,ckpt extreme · per_region,194,1,1,0,55.8927,55.0,1349.0,24.53,35,40,0.0
+world_capitals,ckpt extreme · global,194,1,1,0,29.6693,32.0,741.0,23.16,35,34,0.0
+world_capitals,ckpt convex_hull · per_region,194,1,1,0,32.804,54.0,641.0,11.87,35,62,0.0
+world_capitals,ckpt convex_hull · global,194,1,1,0,21.7161,32.0,347.0,10.84,35,46,0.0

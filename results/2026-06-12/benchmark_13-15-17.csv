@@ -1,0 +1,25 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len,avg_points_outside
+coast_redwood,restart · naive,1190,1,1,0,14817.4913,113.0,15007.0,132.81,116,60,0.0
+coast_redwood,restart · bucketed,1190,1,1,0,2744.0277,113.0,15007.0,132.81,116,60,0.0
+coast_redwood,checkpoint extreme · naive,1190,1,1,0,16006.3061,204.0,9516.0,46.65,140,100,2.0
+coast_redwood,checkpoint extreme · bucketed,1190,1,1,0,1980.2812,204.0,9516.0,46.65,140,100,2.0
+coast_redwood,checkpoint convex_hull · naive,1190,1,1,0,8757.8938,372.0,14278.0,38.38,116,123,12.0
+coast_redwood,checkpoint convex_hull · bucketed,1190,1,1,0,1636.1915,372.0,14278.0,38.38,116,123,12.0
+gray_wolf,restart · naive,1054,1,1,0,427.8033,22.0,1890.0,85.91,25,92,0.0
+gray_wolf,restart · bucketed,1054,1,1,0,158.7258,22.0,1890.0,85.91,25,92,0.0
+gray_wolf,checkpoint extreme · naive,1054,1,1,0,665.3913,99.0,3434.0,34.69,57,123,7.0
+gray_wolf,checkpoint extreme · bucketed,1054,1,1,0,225.193,99.0,3434.0,34.69,57,123,7.0
+gray_wolf,checkpoint convex_hull · naive,1054,1,1,0,645.8715,105.0,3360.0,32.0,57,138,9.0
+gray_wolf,checkpoint convex_hull · bucketed,1054,1,1,0,200.2735,105.0,3360.0,32.0,57,138,9.0
+us_cities,restart · naive,219,1,1,0,8.3885,2.0,72.0,36.0,5,69,0.0
+us_cities,restart · bucketed,219,1,1,0,4.6885,2.0,72.0,36.0,5,69,0.0
+us_cities,checkpoint extreme · naive,219,1,1,0,8.3635,2.0,18.0,9.0,5,86,0.0
+us_cities,checkpoint extreme · bucketed,219,1,1,0,3.808,2.0,18.0,9.0,5,86,0.0
+us_cities,checkpoint convex_hull · naive,219,1,1,0,8.5807,2.0,16.0,8.0,5,86,0.0
+us_cities,checkpoint convex_hull · bucketed,219,1,1,0,3.7073,2.0,16.0,8.0,5,86,0.0
+world_capitals,restart · naive,194,1,1,0,98.2555,32.0,1134.0,35.44,35,28,0.0
+world_capitals,restart · bucketed,194,1,1,0,64.4407,32.0,1134.0,35.44,35,28,0.0
+world_capitals,checkpoint extreme · naive,194,1,1,0,125.4638,55.0,1349.0,24.53,35,40,0.0
+world_capitals,checkpoint extreme · bucketed,194,1,1,0,55.607,55.0,1349.0,24.53,35,40,0.0
+world_capitals,checkpoint convex_hull · naive,194,1,1,0,86.2286,54.0,641.0,11.87,35,62,0.0
+world_capitals,checkpoint convex_hull · bucketed,194,1,1,0,32.9148,54.0,641.0,11.87,35,62,0.0

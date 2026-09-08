@@ -1,0 +1,16 @@
+dataset,variant,n,num_runs,successes,failures,avg_runtime_ms,avg_restarts,avg_wasted_edges,avg_restart_size,avg_final_k,avg_hull_len
+unit_disk,original (naive intersection),100,2,2,0,3.3241,1.5,43.0,28.67,4,39
+unit_disk,original (naive intersection),250,2,2,0,2.5702,0.0,0.0,,3,43
+unit_disk,bucketed intersection,100,2,2,0,1.907,1.5,43.0,28.67,4,39
+unit_disk,bucketed intersection,250,2,2,0,1.1319,0.0,0.0,,3,43
+unit_disk,checkpoint (convex_hull),100,2,2,0,2.6101,4.0,41.5,10.38,5,46
+unit_disk,checkpoint (convex_hull),250,2,1,1,1.9809,0.0,0.0,,3,80
+coast_redwood,original (naive intersection),100,2,2,0,128.0063,59.5,1139.5,19.15,62,15
+coast_redwood,original (naive intersection),250,2,2,0,274.1244,26.0,1356.0,52.15,29,23
+coast_redwood,original (naive intersection),1190,2,2,0,14348.2947,113.0,15007.0,132.81,116,60
+coast_redwood,bucketed intersection,100,2,2,0,146.3789,59.5,1139.5,19.15,62,15
+coast_redwood,bucketed intersection,250,2,2,0,107.4556,26.0,1356.0,52.15,29,23
+coast_redwood,bucketed intersection,1190,2,2,0,2800.8797,113.0,15007.0,132.81,116,60
+coast_redwood,checkpoint (convex_hull),100,2,1,1,301.3305,184.0,3474.0,18.88,88,24
+coast_redwood,checkpoint (convex_hull),250,2,2,0,823.2419,202.5,6565.0,32.42,102,47
+coast_redwood,checkpoint (convex_hull),1190,2,2,0,1548.6128,372.0,14278.0,38.38,116,123

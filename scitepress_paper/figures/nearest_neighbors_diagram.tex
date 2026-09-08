@@ -1,0 +1,154 @@
+\begin{tikzpicture}[
+    filled/.style={circle, fill=black!70, inner sep=0pt, minimum size=6pt},
+    open/.style={circle, draw=black, fill=white, inner sep=0pt, minimum size=6pt},
+    starpt/.style={circle, fill=black, inner sep=0pt, minimum size=7pt},
+    currentpt/.style={circle, draw=black, fill=white, inner sep=0pt,
+                      minimum size=9pt, double, double distance=1.2pt},
+    lbl/.style={font=\footnotesize\bfseries},
+  ]
+
+  % ===== C-shaped point cloud (single definition) =====
+  \def\cloudpoints{
+    (2.1, 3.2),  (1.3, 3.5),  (0.5, 3.3),
+    (-0.1, 2.8), (-0.3, 2.1), (-0.1, 1.4),
+    (1.6, 2.9),  (0.7, 3.0),  (0.2, 2.4),  (0.1, 1.8),(0.5, 2.6)%
+  }
+  \newcommand{\drawcloud}{%
+    \foreach \pt in \cloudpoints { \node[filled] at \pt {}; }%
+  }
+
+  %%% ============== FIGURE a) ============== %%%
+  \begin{scope}[shift={(0,0)}]
+    \drawcloud
+    \node[starpt, label={[lbl]below:{A}}]      (A)  at (1.2, 0.1) {};
+    \node[open,   label={[lbl]above left:{B}}]  (aB) at (0.3, 1.2) {};
+    \node[open,   label={[lbl]right:{C}}]       (aC) at (2.4, 1.0) {};
+    \node[open,   label={[lbl]left:{D}}]        (aD) at (0.1, 0.5) {};
+
+    \draw[dashed, gray] (-0.8, 0.1) -- (3.0, 0.1);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (A) -- (aB);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (A) -- (aC);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (A) -- (aD);
+
+    % Incoming direction = 180 (left along horizontal)
+    \pgfmathsetmacro{\incA}{180}
+    \pgfmathsetmacro{\angC}{atan2(1.0-0.1, 2.4-1.2)}
+    \pgfmathsetmacro{\angB}{atan2(1.2-0.1, 0.3-1.2)}
+    \pgfmathsetmacro{\angD}{atan2(0.5-0.1, 0.1-1.2)}
+
+    \pgfmathsetmacro{\ccwC}{mod(\angC-\incA+360,360)}
+    \pgfmathsetmacro{\dC}{\ccwC > 180 ? -(360-\ccwC) : \ccwC}
+    \pgfmathsetmacro{\ccwB}{mod(\angB-\incA+360,360)}
+    \pgfmathsetmacro{\dB}{\ccwB > 180 ? -(360-\ccwB) : \ccwB}
+    \pgfmathsetmacro{\ccwD}{mod(\angD-\incA+360,360)}
+    \pgfmathsetmacro{\dD}{\ccwD > 180 ? -(360-\ccwD) : \ccwD}
+
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incA:0.95)}]A.center)
+      arc[start angle=\incA, delta angle=\dC, radius=0.95];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incA:0.70)}]A.center)
+      arc[start angle=\incA, delta angle=\dB, radius=0.70];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incA:0.48)}]A.center)
+      arc[start angle=\incA, delta angle=\dD, radius=0.48];
+
+    \node[font=\footnotesize] at (1.2, -0.6) {a)};
+  \end{scope}
+
+  %%% ============== FIGURE b) ============== %%%
+  \begin{scope}[shift={(5.2,0)}]
+    \drawcloud
+    \node[starpt, label={[lbl]below:{A}}]  (bA) at (1.2, 0.1) {};
+    \node[starpt, label={[lbl]right:{C}}]  (bC) at (2.4, 1.0) {};
+    \draw[thick] (bA) -- (bC);
+
+    \node[open, label={[lbl]above left:{E}}] (bE) at (0.5, 2.6) {};
+    \node[open, label={[lbl]above left:{B}}] (bB) at (0.3, 1.2) {};
+    \node[open, label={[lbl]left:{D}}]       (bD) at (0.1, 0.5) {};
+
+    \draw[dashed, gray] (bC) -- ($(bC)!-0.7!(bA)$);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (bC) -- (bE);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (bC) -- (bB);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (bC) -- (bD);
+
+    % Incoming at C = reverse of A->C direction
+    \pgfmathsetmacro{\fwdB}{atan2(1.0-0.1, 2.4-1.2)}
+    \pgfmathsetmacro{\incB}{\fwdB + 180}
+
+    \pgfmathsetmacro{\angEb}{atan2(2.6-1.0, 0.5-2.4)}
+    \pgfmathsetmacro{\angBb}{atan2(1.2-1.0, 0.3-2.4)}
+    \pgfmathsetmacro{\angDb}{atan2(0.5-1.0, 0.1-2.4)}
+
+    \pgfmathsetmacro{\ccwE}{mod(\angEb-\incB+360,360)}
+    \pgfmathsetmacro{\dE}{\ccwE > 180 ? -(360-\ccwE) : \ccwE}
+    \pgfmathsetmacro{\ccwBb}{mod(\angBb-\incB+360,360)}
+    \pgfmathsetmacro{\dBb}{\ccwBb > 180 ? -(360-\ccwBb) : \ccwBb}
+    \pgfmathsetmacro{\ccwDb}{mod(\angDb-\incB+360,360)}
+    \pgfmathsetmacro{\dDb}{\ccwDb > 180 ? -(360-\ccwDb) : \ccwDb}
+
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incB:0.95)}]bC.center)
+      arc[start angle=\incB, delta angle=\dE, radius=0.95];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incB:0.70)}]bC.center)
+      arc[start angle=\incB, delta angle=\dBb, radius=0.70];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incB:0.48)}]bC.center)
+      arc[start angle=\incB, delta angle=\dDb, radius=0.48];
+
+    \node[font=\footnotesize] at (1.2, -0.6) {b)};
+  \end{scope}
+
+  %%% ============== FIGURE c) — Hull A->C->E->F, candidates from F ============== %%%
+  \begin{scope}[shift={(10.4,0)}]
+    \drawcloud
+
+    \node[starpt, label={[lbl]below:{A}}]       (hA) at (1.2, 0.1) {};
+    \node[starpt, label={[lbl]right:{C}}]       (hC) at (2.4, 1.0) {};
+    \node[starpt, label={[lbl]above right:{E}}] (hE) at (0.5, 2.6) {};
+
+    \node[currentpt]                            (hF) at (1.6, 2.9) {};
+    \node[starpt, minimum size=3pt]             at (hF) {};
+    \node[lbl, above] at (hF) {F};
+
+    \draw[thick] (hA) -- (hC) -- (hE) -- (hF);
+
+    \node[open, label={[lbl]left:{B}}]          (cB) at (0.1, 1.8)  {};
+    \node[open, label={[lbl]above:{G}}]         (cG) at (1.3, 3.5)  {};
+    \node[open, label={[lbl]right:{H}}]         (cH) at (2.1, 3.2)  {};
+
+    \draw[dashed, gray] (hF) -- ($(hF)!-0.6!(hE)$);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (hF) -- (cB);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (hF) -- (cG);
+    \draw[dashed, thick, -{Stealth[length=4pt]}] (hF) -- (cH);
+
+    % Incoming at F = reverse of E->F direction
+    \pgfmathsetmacro{\fwdF}{atan2(2.9-2.6, 1.6-0.5)}
+    \pgfmathsetmacro{\incF}{\fwdF + 180}
+
+    \pgfmathsetmacro{\angFB}{atan2(1.8-2.9, 0.1-1.6)}
+    \pgfmathsetmacro{\angFG}{atan2(3.5-2.9, 1.3-1.6)}
+    \pgfmathsetmacro{\angFH}{atan2(3.2-2.9, 2.1-1.6)}
+
+    \pgfmathsetmacro{\ccwFB}{mod(\angFB-\incF+360,360)}
+    \pgfmathsetmacro{\dFB}{\ccwFB > 180 ? -(360-\ccwFB) : \ccwFB}
+    \pgfmathsetmacro{\ccwFG}{mod(\angFG-\incF+360,360)}
+    \pgfmathsetmacro{\dFG}{\ccwFG > 180 ? -(360-\ccwFG) : \ccwFG}
+    \pgfmathsetmacro{\ccwFH}{mod(\angFH-\incF+360,360)}
+    \pgfmathsetmacro{\dFH}{\ccwFH > 180 ? -(360-\ccwFH) : \ccwFH}
+
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incF:0.55)}]hF.center)
+      arc[start angle=\incF, delta angle=\dFB, radius=0.55];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incF:0.75)}]hF.center)
+      arc[start angle=\incF, delta angle=\dFG, radius=0.75];
+    \draw[-{Stealth[length=3pt]}, thin]
+      ([shift={(\incF:0.95)}]hF.center)
+      arc[start angle=\incF, delta angle=\dFH, radius=0.95];
+
+    \node[font=\footnotesize] at (1.2, -0.6) {c)};
+  \end{scope}
+
+\end{tikzpicture}
