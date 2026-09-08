@@ -469,7 +469,8 @@ class ConfigurableConcaveHull:
         step = 2
 
         while (current != first_point or step == 2) and knn.size() > 0:
-            # Re-introduce first_point so the hull can close (matches concavehull.py:363).
+            # Re-introduce first_point so the hull can close
+            # (matches baseline/concavehull.py:363).
             if step == 5:
                 knn.add(first_point)
 

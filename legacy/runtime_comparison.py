@@ -6,9 +6,13 @@ import math
 import matplotlib.pyplot as plt
 import sys
 import threading
-# Import your concave hull function.
-from concavehull import concavehull
-from seans_concavehull_4 import seans_concavehull
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+from baseline import concavehull
+from legacy.monolithic.seans_concavehull_4 import seans_concavehull
 
 def generate_points_in_circle(n, radius=100):
     """

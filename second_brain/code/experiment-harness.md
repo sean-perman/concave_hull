@@ -1,7 +1,8 @@
 # Code: `concave_hull_experiment/` — the configurable experiment harness
 
 **Type:** code page (repo is source of truth — do not edit code from here)
-**Tracks:** `concave_hull_experiment/` (modular port of `seans_concavehull_4.py`)
+**Tracks:** `concave_hull_experiment/` (modular port of
+`legacy/monolithic/seans_concavehull_4.py`)
 **Ingested:** 2026-06-11
 
 ## What it is
@@ -9,7 +10,8 @@
 A clean, modular re-implementation of the Moreira–Santos k-NN concave hull whose
 whole point is **ablation**: every design choice is a toggle on a frozen
 `ConcaveHullConfig`, so a benchmark can compare variants on the same point set.
-Behavior is ported from `seans_concavehull_4.py` (docstrings cite exact line ranges)
+Behavior is ported from `legacy/monolithic/seans_concavehull_4.py` (docstrings
+cite exact line ranges)
 but split into single-responsibility modules. This is the artifact the paper's
 empirical section should be written from.
 

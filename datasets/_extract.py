@@ -1,5 +1,5 @@
 """One-shot extractor: pulls the point-cloud literals out of
-`seans_concavehull_4.py` and writes one CSV per dataset.
+`legacy/monolithic/seans_concavehull_4.py` and writes one CSV per dataset.
 
 Re-runnable. The star dataset is procedural — seeded so the output is
 deterministic.
@@ -11,7 +11,8 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(os.path.dirname(HERE), "seans_concavehull_4.py")
+PROJECT_ROOT = os.path.dirname(HERE)
+SRC = os.path.join(PROJECT_ROOT, "legacy", "monolithic", "seans_concavehull_4.py")
 
 # Each entry: (output_csv_name, source_line_range_inclusive).
 # Line ranges cover the `points = [...]` block (commented or not) in source.
@@ -46,7 +47,7 @@ def write_csv(out_path: str, points: list[tuple[float, float]]) -> None:
 def generate_star(num_points: int = 300, num_tips: int = 8, outer_r: float = 100.0,
                   inner_r: float = 4.0, jitter: float = 3.0, seed: int = 42
                   ) -> list[tuple[float, float]]:
-    """Ported from the procedural block in seans_concavehull_4.py:1111-1130."""
+    """Ported from legacy/monolithic/seans_concavehull_4.py:1111-1130."""
     rng = random.Random(seed)
     pts = []
     for _ in range(num_points):

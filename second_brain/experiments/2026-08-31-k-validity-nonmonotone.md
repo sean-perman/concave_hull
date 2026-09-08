@@ -55,8 +55,8 @@ validity returns.
 From the repository root in the project's Python 3.12 environment:
 
 ```sh
-python3.12 validity_monotonicity/validity_test.py
-python3.12 validity_monotonicity/validity_test.py --search --trials 1000
+python3.12 studies/validity_monotonicity/validity_test.py
+python3.12 studies/validity_monotonicity/validity_test.py --search --trials 1000
 python3.12 -m unittest discover -s tests -p 'test_validity_monotonicity.py' -v
 ```
 
@@ -65,11 +65,11 @@ rediscovers the saved example at trial 629.
 
 ## Artifacts
 
-- Points: `validity_monotonicity/counterexample_points.csv`
-- Search and verification: `validity_monotonicity/validity_test.py`
-- Figure: `validity_monotonicity/counterexample.png`
+- Points: `studies/validity_monotonicity/counterexample_points.csv`
+- Search and verification: `studies/validity_monotonicity/validity_test.py`
+- Figure: `studies/validity_monotonicity/counterexample.png`
 - Regression: `tests/test_validity_monotonicity.py`
-- Explanation: `validity_monotonicity/README.md`
+- Explanation: `studies/validity_monotonicity/README.md`
 
 ## Paper consequence
 

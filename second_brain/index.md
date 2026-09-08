@@ -23,8 +23,8 @@ most-cited internal sources across the ledger and still have no page — priorit
 
 | Page | Tracks |
 |------|--------|
-| `code/baseline.md` | `concavehull.py` — recursive full-restart implementation. *(page not yet written)* |
-| `code/optimized.md` | `seans_concavehull_4.py` — bucketing + checkpoint trimming + visualizer. *(page not yet written)* |
+| `code/baseline.md` | `baseline/concavehull.py` — recursive full-restart implementation. *(page not yet written)* |
+| `code/optimized.md` | `legacy/monolithic/seans_concavehull_4.py` — bucketing + checkpoint trimming + visualizer. *(page not yet written)* |
 | `code/experiment-harness.md` | `concave_hull_experiment/` — modular port with pluggable feature axes, the corrected bucketing benchmark, and a paper-ready 2×2 geometric-growth factorial harness. **The artifact the empirical section is written from.** |
 | `code/datasets.md` | `datasets/*.csv` — test clouds framed by **use case**: synthetic/benchmark (original paper), GIS footprints (species-range + settlement), + prospective uses (cluster-boundary extraction, sensor/coverage). |
 

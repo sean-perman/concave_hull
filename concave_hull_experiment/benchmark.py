@@ -1,6 +1,7 @@
 """Runtime + failure-count sweep across user-defined variants.
 
-Mirrors the old `runtime_test.py` shape but driven by the new ConcaveHullConfig:
+Mirrors the old `legacy/runtime_comparison.py` shape but driven by the new
+ConcaveHullConfig:
 edit the VARIANTS list at the bottom to compare whatever axes you want.
 
 Each variant is a (label, dict-of-config-kwargs) pair. For every variant and
@@ -53,7 +54,7 @@ def generate_unit_disk_points(n: int, seed: int) -> list[tuple[float, float]]:
 def generate_star_points(n: int, seed: int, *, num_tips: int = 8,
                          outer_r: float = 100.0, inner_r: float = 4.0,
                          jitter: float = 3.0) -> list[tuple[float, float]]:
-    """8-tip star cloud, ported from seans_concavehull_4.py:1111-1130.
+    """8-tip star cloud, ported from legacy/monolithic/seans_concavehull_4.py:1111-1130.
 
     Points cluster around the star outline with a radial bias toward the boundary
     (the `0.7 + 0.3*random()` factor) plus uniform xy jitter. This dataset has

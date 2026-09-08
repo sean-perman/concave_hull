@@ -1,6 +1,6 @@
 import unittest
 
-from validity_monotonicity.validity_test import (
+from studies.validity_monotonicity.validity_test import (
     DEFAULT_POINTS,
     is_general_position,
     load_points,

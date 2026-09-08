@@ -29,13 +29,13 @@ exact-intersection backends produce the same results.
 From the repository root, using an environment with SciPy, Shapely, and Matplotlib:
 
 ```sh
-python validity_monotonicity/validity_test.py
+python studies/validity_monotonicity/validity_test.py
 ```
 
 Repeat the seeded random search that produced the simplified integer example:
 
 ```sh
-python validity_monotonicity/validity_test.py --search
+python studies/validity_monotonicity/validity_test.py --search
 ```
 
 The default verification writes `counterexample.png`, showing the valid `k=3` hull,

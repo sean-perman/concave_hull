@@ -14,7 +14,7 @@ must remain `true` for every larger $k$.
 ## Counterexample
 
 The six-point integer set in
-`validity_monotonicity/counterexample_points.csv` has
+`studies/validity_monotonicity/counterexample_points.csv` has
 
 $$
 V(3)=\mathrm{true},\qquad

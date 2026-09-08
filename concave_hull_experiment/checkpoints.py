@@ -18,7 +18,7 @@ Point = tuple[float, float]
 def select_extreme_points(points: list[Point]) -> list[Point]:
     """Up to 4 cardinal extremes in CCW order, deduplicated, starting from min-y.
 
-    Port of seans_concavehull_4.py:440-462.
+    Port of legacy/monolithic/seans_concavehull_4.py:440-462.
     """
     min_x_pt = min(points, key=lambda p: (p[0], p[1]))
     max_x_pt = max(points, key=lambda p: (p[0], -p[1]))
@@ -39,7 +39,7 @@ def select_extreme_points(points: list[Point]) -> list[Point]:
 def compute_convex_hull(points: list[Point]) -> list[Point]:
     """Convex hull via Andrew's monotone chain, CCW, starting from min-y, no closing duplicate.
 
-    Port of seans_concavehull_4.py:464-500.
+    Port of legacy/monolithic/seans_concavehull_4.py:464-500.
     """
     pts = sorted({tuple(p) for p in points})
     if len(pts) <= 1:
@@ -103,7 +103,7 @@ def trim_to_checkpoint(
     trimmed edges from the intersection index.
 
     Caller is responsible for bumping region_k_values[current_region].
-    Port of seans_concavehull_4.py:515-579.
+    Port of legacy/monolithic/seans_concavehull_4.py:515-579.
     """
     # 1. Identify the earliest hull edge that the best candidate would cross.
     best = candidates_sorted[0] if candidates_sorted else None

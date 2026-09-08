@@ -1,4 +1,4 @@
-"""Pure geometry helpers extracted from concavehull.py."""
+"""Pure geometry helpers extracted from baseline/concavehull.py."""
 import math
 
 
@@ -30,9 +30,10 @@ def compute_angle(p1: Point, p2: Point) -> float:
 def sortByAngle(candidates: list[Point], current: Point, prev_angle: float) -> list[Point]:
     """Sort candidates by relative angle to prev_angle, going clockwise from current.
 
-    Matches concavehull.py:100 — relative angle = (atan2(dy, dx) - prev_angle) mod 2π.
+    Matches baseline/concavehull.py:100 — relative angle =
+    (atan2(dy, dx) - prev_angle) mod 2π.
 
-    Note: the original concavehull.py coerced coordinates to int as a numpy-int64
+    Note: baseline/concavehull.py coerced coordinates to int as a numpy-int64
     workaround. We keep them as floats so non-integer datasets work.
     """
     def relative_angle(point):

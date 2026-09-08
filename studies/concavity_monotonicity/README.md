@@ -76,6 +76,6 @@ the n = 8 figure, and note that a principled k-vs-shape relationship is future w
 ## Reproduce
 
 ```
-python3 monotonicity_test.py
+python3 studies/concavity_monotonicity/monotonicity_test.py
 ```
 Outputs `counterexample_points.csv` and `counterexample.png` in this folder.

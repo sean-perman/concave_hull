@@ -93,7 +93,8 @@ Exercised the rule on the two ingested artifacts ([[moreira-santos]], [[draft]])
 
 ## [2026-06-11] ingest-code | concave_hull_experiment/ → high-level features + new claims
 
-Read the `concave_hull_experiment/` package (modular port of `seans_concavehull_4.py`;
+Read the `concave_hull_experiment/` package (modular port of
+`legacy/monolithic/seans_concavehull_4.py`;
 docstrings cite exact source line ranges). Wrote `code/experiment-harness.md`
 enumerating the feature axes, plus concept `wiki/concepts/k-growth-strategy.md`.
 
@@ -134,7 +135,8 @@ Characterized the 5 test clouds (measured counts/extents/dups) and filed
 `code/datasets.md`. Easy→hard ladder: capitals/cities (sparse near-convex) →
 redwood/wolf (real concave strip/spread) → star_8_tips (deep synthetic concavity,
 the C-CHK-3 stress case). Provenance: `_extract.py` pulls 4 real geo sets from
-`seans_concavehull_4.py` literals + procedural star (seed 42, 300 pts).
+`legacy/monolithic/seans_concavehull_4.py` literals + procedural star (seed 42,
+300 pts).
 
 Findings worth a sentence in the draft (recorded on the page as limitations):
 - **Antimeridian wrap** in `world_capitals` (x ∈ [−175.2, 179.2]) — planar Euclidean
@@ -506,7 +508,7 @@ triple and no equal-distance nearest-neighbour tie. The naive and corrected
 bucketed intersection backends agree.
 
 Added the reproducible seeded search, saved coordinates, three-panel figure, and
-two regression tests under `validity_monotonicity/`; both tests pass and a
+two regression tests under `studies/validity_monotonicity/`; both tests pass and a
 1,000-trial rerun rediscovers the example at trial 629. Logged full method and
 artifacts in `experiments/2026-08-31-k-validity-nonmonotone.md` and created
 [[k-validity-nonmonotone]].

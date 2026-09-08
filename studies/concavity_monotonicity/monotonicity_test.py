@@ -18,7 +18,7 @@ import sys
 
 import numpy as np
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, REPO)
 
 import concave_hull_experiment.concave_hull as ch_mod

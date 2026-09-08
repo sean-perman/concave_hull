@@ -119,7 +119,8 @@ shape figures; the synthetic *families* carry the quantitative claims.
 ## Provenance
 
 `_extract.py` re-derives all five deterministically: four real sets from
-`seans_concavehull_4.py` literals, the star from `generate_star(seed=42, 300 pts)`.
+`legacy/monolithic/seans_concavehull_4.py` literals, the star from
+`generate_star(seed=42, 300 pts)`.
 The CSV star is one fixed instance; `benchmark.py` reseeds per run.
 
 ## See also
