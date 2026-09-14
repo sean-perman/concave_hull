@@ -3,6 +3,16 @@
 Research code, experiments, and paper sources for analyzing and improving the
 Moreira-Santos *k*-nearest-neighbours concave-hull algorithm.
 
+## Paper status
+
+A paper based on this repository — runtime analysis of the original
+restart-based algorithm, spatial-bucketing and geometric-growth
+accelerations, and counterexamples showing that neither hull concavity nor
+fixed-*k* validity is monotone in *k* — is **in progress**. We plan to submit
+it to GRIVAPP 2027, the direct successor to GRAPP, the conference where the
+original Moreira-Santos algorithm was published. The manuscript isn't
+finalized yet, so it isn't included here; a link will be added once it is.
+
 ## Which implementation should I use?
 
 | Path | Purpose | Status |
@@ -24,8 +34,7 @@ code released by the paper's authors.
 - `studies/` - focused monotonicity studies and counterexamples
 - `datasets/` - synthetic and real point datasets used by the experiments
 - `results/` - recorded benchmark results and figures
-- `scitepress_paper/` - current paper source and publication figures
-- `second_brain/` - research notes, claims, and literature summaries
+- `scitepress_paper/` - paper source (SCITEPRESS template) and publication figures
 - `references/` - source papers used by the project
 
 ## Setup
@@ -81,3 +90,7 @@ The original algorithm is described in:
 > Points." GRAPP 2007, pp. 61-68.
 
 The PDF is stored at `references/moreira_santos_2007.pdf`.
+
+## License
+
+MIT - see [LICENSE](LICENSE).
