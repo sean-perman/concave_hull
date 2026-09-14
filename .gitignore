@@ -18,8 +18,11 @@ env/
 .vscode/
 .idea/
 .claude/settings.local.json
-second_brain/.obsidian/workspace.json
-second_brain/.obsidian/workspace-mobile.json
+
+# Private research notes, work log, and scratch AI output
+# (kept locally; not part of the public-facing repository)
+second_brain/
+Claude outputs/
 
 # LaTeX build products
 *.aux
