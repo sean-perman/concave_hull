@@ -1,43 +1,37 @@
 # Concave Hull
 
-Research code, experiments, and paper sources for analyzing and improving the
-Moreira-Santos *k*-nearest-neighbours concave-hull algorithm.
+This repository holds the research paper I'm writing on the Moreira-Santos
+*k*-nearest-neighbours concave-hull algorithm, along with all of the code,
+experiments, and data behind it.
 
-## Paper status
+**The paper is a work in progress.** I plan to submit it to GRIVAPP 2027 in
+October 2026.
 
-A paper based on this repository — runtime analysis of the original
-restart-based algorithm, spatial-bucketing and geometric-growth
-accelerations, and counterexamples showing that neither hull concavity nor
-fixed-*k* validity is monotone in *k* — is **in progress**. We plan to submit
-it to GRIVAPP 2027, the direct successor to GRAPP, the conference where the
-original Moreira-Santos algorithm was published. The manuscript isn't
-finalized yet, so it isn't included here; a link will be added once it is.
+**Start here:** [`scitepress_paper/short_paper_draft.pdf`](scitepress_paper/short_paper_draft.pdf)
+is the current draft — read that first for the actual contributions
+(runtime analysis of the original algorithm, two optimizations, and
+counterexamples showing the algorithm's `k` parameter doesn't behave
+monotonically). Everything below is supporting code and data.
 
-## Which implementation should I use?
+## What's in this repository
 
 | Path | Purpose | Status |
 | --- | --- | --- |
-| `baseline/` | Direct Python baseline for the restart-from-scratch algorithm | Preserved for comparison |
-| `concave_hull_experiment/` | Sean's configurable implementation, optimizations, benchmarks, and visualizer | Current development code |
+| `scitepress_paper/` | Paper source (SCITEPRESS/LaTeX template) and the current PDF draft | In progress |
+| `baseline/` | Direct Python baseline for the original restart-from-scratch algorithm | Preserved for comparison |
+| `concave_hull_experiment/` | Configurable implementation, optimizations, benchmarks, and visualizer | Current development code |
 | `legacy/monolithic/` | Earlier monolithic development versions | Historical reference only |
+| `tests/` | Automated correctness and regression tests | |
+| `studies/` | Focused monotonicity studies and counterexamples | |
+| `datasets/` | Synthetic and real point datasets used by the experiments | |
+| `results/` | Recorded benchmark results and figures | |
+| `references/` | Source papers used by the project | |
 
 The Moreira-Santos paper describes a Mathematica implementation. The code in
-`baseline/` is the project's Python recreation of that algorithm, not source
+`baseline/` is this project's Python recreation of that algorithm, not source
 code released by the paper's authors.
 
-## Repository layout
-
-- `baseline/` - preserved restart-based Python implementation
-- `concave_hull_experiment/` - maintained modular implementation and benchmark tools
-- `legacy/` - earlier prototypes and the old runtime comparison script
-- `tests/` - automated correctness and regression tests
-- `studies/` - focused monotonicity studies and counterexamples
-- `datasets/` - synthetic and real point datasets used by the experiments
-- `results/` - recorded benchmark results and figures
-- `scitepress_paper/` - paper source (SCITEPRESS template) and publication figures
-- `references/` - source papers used by the project
-
-## Setup
+## Running the code
 
 Create a Python environment and install the dependencies:
 
@@ -83,7 +77,7 @@ hull = concavehull(points, k=3)
 
 ## Reference paper
 
-The original algorithm is described in:
+The original algorithm this work builds on:
 
 > Adriano Moreira and Maribel Yasmina Santos. "Concave Hull: A k-Nearest
 > Neighbours Approach for the Computation of the Region Occupied by a Set of

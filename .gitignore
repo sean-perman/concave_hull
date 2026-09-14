@@ -38,7 +38,6 @@ Claude outputs/
 *.lot
 scitepress_paper/build/
 scitepress_paper/build_short/
-scitepress_paper/short_paper_draft.pdf
 
 # Temporary renders and extracted working files
 tmp/

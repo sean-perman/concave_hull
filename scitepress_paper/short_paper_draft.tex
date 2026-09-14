@@ -33,7 +33,7 @@
 
 \keywords{Concave Hull, Convex Hull, Polygon, Contour, K-Nearest Neighbours, Spatial Bucketing, Computational Geometry.}
 
-\abstract{Moreira and Santos introduced a $k$-nearest-neighbours variation of gift wrapping for constructing concave hulls. The parameter $k$ heuristically controls concavity. When construction fails, the algorithm discards the partial hull and restarts with a larger $k$ until it finds a valid hull. The original paper lacked an asymptotic runtime analysis. We show that one fixed-$k$ attempt has a worst-case upper bound of $O(kn^2)$, linear $k$-growth gives $O(n^4)$, and constant-ratio geometric growth reduces the restart bound to $O(n^3)$ under the same cost model. We also prove termination because, when all remaining points are considered, the method reduces to Jarvis march. The analysis identifies edge-intersection checking and repeated reconstruction as main costs. In a two-factor experiment on real and synthetic datasets, uniform-grid spatial bucketing gives paired median speedups of $1.40$--$3.41\times$ while preserving the ordered hull, whereas geometric growth gives $1.36$--$44.57\times$ speedups but usually selects a different valid hull. Combining both gives $1.89$--$147.94\times$ speedups over the baseline. Finally, counterexamples show that neither hull concavity nor fixed-$k$ validity is monotone in $k$, ruling out ordinary binary search for the smallest valid $k$. These results provide runtime bounds, acceleration strategies, and clarify how $k$ affects construction.}
+\abstract{Moreira and Santos introduced a $k$-nearest-neighbours variation of gift wrapping for constructing concave hulls. The parameter $k$ heuristically controls concavity. When construction fails, the algorithm discards the partial hull and restarts with a larger $k$ until it finds a valid hull. The original paper lacked an asymptotic runtime analysis. We show that one fixed-$k$ attempt has a worst-case upper bound of $O(kn^2)$, linear $k$-growth gives $O(n^4)$, and constant-ratio geometric growth reduces the restart bound to $O(n^3)$ under the same cost model. We make termination explicit by testing $k=n-1$ once and then using a standard convex-hull fallback if every concave-hull attempt fails. The analysis identifies edge-intersection checking and repeated reconstruction as main costs. In a two-factor experiment on real and synthetic datasets, uniform-grid spatial bucketing gives paired median speedups of $1.40$--$3.41\times$ while preserving the ordered hull, whereas geometric growth gives $1.36$--$44.57\times$ speedups but usually selects a different valid hull. Combining both gives $1.89$--$147.94\times$ speedups over the baseline. Finally, counterexamples show that neither hull concavity nor fixed-$k$ validity is monotone in $k$, ruling out ordinary binary search for the smallest valid $k$. These results provide runtime bounds, acceleration strategies, and clarify how $k$ affects construction.}
 \onecolumn \maketitle \normalsize \setcounter{footnote}{0} \vfill
 % ================================================================
 \section{\uppercase{Introduction}}
@@ -41,7 +41,7 @@ Given a finite set of points in the plane, many applications need a polygon that
 
 Moreira and Santos proposed a concave hull algorithm based on $k$-nearest neighbours and gift wrapping \cite{moreira2007}. When the algorithm fails to construct a valid hull, it discards its partial result and starts again with a larger value of $k$. This process continues until it finds a hull containing every input point. Although the algorithm is simple and flexible, the original paper did not provide an asymptotic runtime analysis. Repeated restarts and edge-intersection checks can cause the algorithm to perform a large amount of repeated work.
 
-This paper makes three contributions. First, we show that one attempt with fixed $k$ has a worst-case upper bound of $O(kn^2)$, and that repeated attempts under linear $k$-growth give an $O(n^4)$ upper bound. A constant-ratio geometric schedule instead gives an $O(n^3)$ upper bound under the same model. We also show that the algorithm terminates when $k$ becomes large enough to consider all remaining points. Second, we evaluate the two independent optimization targets exposed by the analysis. Uniform-grid spatial bucketing accelerates edge-intersection checking by $1.40$--$3.41\times$ without changing the hull. Geometric growth reduces the number of reconstruction attempts and gives $1.36$--$44.57\times$ speedups, while sometimes changing the selected valid hull; their combination is $1.89$--$147.94\times$ faster than the original baseline. Third, we give counterexamples showing that increasing $k$ can produce a more concave hull and that success at one value of $k$ does not imply success at every larger value.
+This paper makes three contributions. First, we show that one attempt with fixed $k$ has a worst-case upper bound of $O(kn^2)$, and that repeated attempts under linear $k$-growth give an $O(n^4)$ upper bound. A constant-ratio geometric schedule instead gives an $O(n^3)$ upper bound under the same model. We also identify a termination gap in the published recursive pseudocode and close it by testing $k=n-1$ once, then returning the ordinary convex hull if the concave construction still fails. Second, we evaluate the two independent optimization targets exposed by the analysis. Uniform-grid spatial bucketing accelerates edge-intersection checking by $1.40$--$3.41\times$ without changing the hull. Geometric growth reduces the number of reconstruction attempts and gives $1.36$--$44.57\times$ speedups, while sometimes changing the selected valid hull; their combination is $1.89$--$147.94\times$ faster than the original baseline. Third, we give counterexamples showing that increasing $k$ can produce a more concave hull and that success at one value of $k$ does not imply success at every larger value.
 
 % ================================================================
 \section{\uppercase{The Moreira--Santos Algorithm}}
@@ -67,8 +67,9 @@ The algorithm begins by selecting an extreme point (minimum $y$-coordinate) as t
   \label{fig:dead-end}
 \end{figure}
 The algorithm has two main failure cases. First, there may be no valid candidates among the current $k$-nearest neighbours: each candidate edge intersects the existing partial hull, so the algorithm cannot safely extend the boundary (\textbf{dead end}). Second, after the hull has been closed, some input points may still remain outside the polygon. In that case, the computed hull fails to enclose the full point set (\textbf{excluded points}).
+The published algorithm responds to either failure by restarting with $k+1$. Our implementation preserves its rule that the starting point cannot be reintroduced before the fourth vertex. It changes only the terminal behavior: $k=n-1$ is attempted once, and a failed attempt at that cap returns the ordinary convex hull rather than recursively requesting the same capped value again.
 \subsection{The Role of the Parameter $k$}
-The parameter $k$ is the central control variable in the algorithm. When $k$ is small, candidate selection is highly local, allowing the boundary to follow fine geometric detail and concave features. When $k$ is larger, the set of candidate vertices broadens, and the resulting hull tends to be smoother and closer to a convex enclosure. In the case where $k=n$, large enough that all remaining points are considered at each step, the method is identical to the Jarvis-march search and produces the convex hull.
+The parameter $k$ is the central control variable in the algorithm. When $k$ is small, candidate selection is highly local, allowing the boundary to follow fine geometric detail and concave features. When $k$ is larger, the set of candidate vertices broadens, and the resulting hull tends to be smoother and closer to a convex enclosure. For $n$ distinct input points, $k=n-1$ is the largest meaningful value because every available point can then be considered. This makes the vertex choice resemble Jarvis march, but does not by itself prove that the complete procedure terminates under the original closure rule.
 \begin{figure}[h]
   \centering
   \includegraphics[width=1\columnwidth]{Screenshot 2026-04-02 at 4.04.57 PM.png}
@@ -162,8 +163,10 @@ C_{\mathrm{geo}}
 \]
 This is an upper bound for a modified growth schedule, not for the original
 algorithm. The schedule may skip smaller successful values of $k$ and therefore
-change the returned hull, but it remains terminating when the all-candidates
-value is used as an explicit cap.
+change the returned hull. The schedule is finite because the all-candidates
+value is tested once; if that attempt also fails, the convex-hull fallback
+described below is used. Its $O(n\log n)$ cost does not change either restart
+bound.
 These bounds identify two independent optimization targets. Within an attempt,
 edge-intersection checking drives the $O(kn^2)$ term; across attempts, the growth
 schedule determines the restart sum. Section~4 addresses the first target with
@@ -175,9 +178,15 @@ recover the minimum in general because fixed-$k$ validity is not monotone.
 
 \subsection{Termination}
 
-The original paper states that repeatedly increasing \(k\) eventually produces a valid hull, but its pseudocode does not establish this for every input. The value of \(k\) is capped at \(n-1\), yet a failed attempt at that value recursively calls the algorithm with \(k+1\), which is immediately reduced back to \(n-1\). The same failed attempt may therefore be repeated indefinitely. This is an oversight in the original termination argument: boundedness of \(k\) alone does not imply termination, particularly for degenerate inputs such as fully collinear point sets, which do not admit a two-dimensional polygonal hull. For point sets in general position whose convex hull has at least four vertices, termination can instead be established by showing that the \(k=n-1\) attempt follows Jarvis march, closes the convex hull, and cannot trigger another restart.
+The original paper states that repeatedly increasing \(k\) eventually produces a valid hull, but its pseudocode does not establish this for every input. The value of \(k\) is capped at \(n-1\), yet a failed attempt at that value recursively calls the algorithm with \(k+1\), which is immediately reduced back to \(n-1\). The same failed attempt may therefore be repeated indefinitely. Boundedness of \(k\) alone therefore does not imply termination.
 
-TODO: Add the formal termination proof. 
+Our restart-based implementation uses the following terminal rule. The construction attempts each value in its growth schedule at most once, including a final attempt at \(k=n-1\). If no attempt returns a valid enclosing polygon, it computes the ordinary convex hull with Andrew's monotone-chain algorithm~\cite{andrew1979}.
+
+\paragraph{Proposition.}
+For every finite input point set, the modified restart-based algorithm terminates. If the set is non-collinear, it returns a simple polygon containing every input point; if the set is collinear, it terminates with an explicit report that no two-dimensional polygonal hull exists.
+
+\paragraph{Proof.}
+Remove duplicate points and let \(n\) be the number that remain. During a fixed-\(k\) attempt, each accepted non-starting vertex is removed from the candidate set. Consequently, after finitely many iterations the attempt either closes its polygon, reaches a dead end, or exhausts its candidates. Under either restart schedule analyzed here, \(k\) strictly increases and never exceeds \(n-1\), which is attempted only once, so the schedule contains finitely many attempts. If one of them produces a valid enclosing polygon, the algorithm stops. Otherwise, the convex-hull fallback terminates. For a non-collinear finite set its result has at least three vertices, is simple, and contains every input point. For a collinear set the convex hull is a segment, which the algorithm detects and reports instead of claiming a polygon. Thus every execution terminates, and every successful execution returns an enclosing polygon. \(\square\)
 
 
 \section{\uppercase{Spatial Bucketing Improvement}}
@@ -229,9 +238,10 @@ eight-pointed star designed to create difficult concavities and force dead ends.
 synthetic family was tested at $n=1{,}000$, $5{,}000$, $10{,}000$, and $50{,}000$
 over ten random seeds; each real dataset received ten timing trials.
 
-Every trial evaluated all four configurations on the same input, and their execution order was varied across trials to reduce timing bias. An untied warm-up preceded each timing series to exclude one-time library-loading costs, and intersection counts were collected separately so that counting did not affect the runtime measurements. For each run, we measured runtime, the number and values of \(k\) tested, the final \(k\), and the number of exact intersection tests. We also computed the hull area ratio \(\rho\) and verified that the final hull contained every input point. Within each growth schedule,
+Every trial evaluated all four configurations on the same input, and their execution order was varied across trials to reduce timing bias. An untied warm-up preceded each timing series to exclude one-time library-loading costs, and intersection counts were collected separately so that counting did not affect the runtime measurements. For each run, we measured runtime, the number and values of \(k\) tested, the final \(k\), the number of exact intersection tests, and whether the terminal fallback was used. We also computed the hull area ratio \(\rho\) and verified that the final hull contained every input point. Within each growth schedule,
 naive and bucketed checking produced identical ordered hulls in all 220
-schedule-matched comparisons.
+schedule-matched comparisons. No reported benchmark run used the fallback, so
+all timing and shape comparisons concern concave-hull outputs.
 
 
 Figure~\ref{fig:growth-factorial-results} summarizes the paired results. Bucketing alone gives paired
@@ -339,7 +349,7 @@ closes and encloses \(E\). Figure~\ref{fig:validity-counterexample} shows these 
   \label{fig:validity-counterexample}
 \end{figure*}
 
-These outcomes show that fixed-\(k\) validity is not monotone. Binary search is therefore not a correct method for finding the smallest valid \(k\): after observing the failure at \(k=4\), it could discard smaller values even though \(k=3\) succeeds. The geometric schedule does not require validity to be monotone. It simply increases \(k\) after each failed attempt until it finds a valid hull or reaches \(k=n-1\), where all remaining points are considered. Geometric growth may skip a smaller successful value, but it still progresses toward the guaranteed all-candidates result.
+These outcomes show that fixed-\(k\) validity is not monotone. Binary search is therefore not a correct method for finding the smallest valid \(k\): after observing the failure at \(k=4\), it could discard smaller values even though \(k=3\) succeeds. The geometric schedule does not require validity to be monotone. It simply increases \(k\) after each failed attempt until it finds a valid hull or tests \(k=n-1\), where all remaining points are considered. Geometric growth may skip a smaller successful value; if the final all-candidates attempt fails, the algorithm uses the convex-hull fallback rather than repeating that value.
 
 
 % ================================================================
@@ -377,7 +387,8 @@ explain its cost and improve its practical performance. One fixed-$k$ attempt ha
 an $O(kn^2)$ worst-case upper bound, while the original linear restart rule gives
 an $O(n^4)$ upper bound. Constant-ratio geometric growth changes the restart sum
 and lowers the corresponding upper bound to $O(n^3)$, although it may skip smaller
-successful values of $k$.
+successful values of $k$. Testing $k=n-1$ once and then using a convex-hull
+fallback closes the original termination gap without changing either bound.
 
 Uniform-grid spatial bucketing reduces exact intersection predicates without
 changing the resulting hull; across the tested real and synthetic datasets it
@@ -389,7 +400,8 @@ linear-growth, naive-intersection baseline.
 Finally, $k$ is not a monotone control variable. A larger value can produce a
 more concave valid hull, and fixed-$k$ validity can change from true to false and
 back to true. The latter result rules out ordinary binary search for the smallest
-valid $k$, while leaving forward geometric growth as a terminating alternative.
+valid $k$. Together with the terminal fallback, forward geometric growth provides
+a finite search schedule, though it may skip smaller successful values of $k$.
 % ================================================================
 \bibliographystyle{apalike}
 {\small
